@@ -1,4 +1,4 @@
-3<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -29,7 +29,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-fixed-top navbar-inverse">
+    <nav class="navbar navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -64,34 +64,67 @@
           </div>
           <div id="backgroundsBox" class="row">
             <div class="background-default background1 col-xs-6 col-lg-4">
-              <h2></h2>
-              <p></p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <div class="background-info">
+                  <h2></h2> 
+                  <p></p>
+                  <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> 
+                </div>
             </div>
             <div class="background-default background2 col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p></p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <div class="background-info">
+                  <h2></h2> 
+                  <p></p>
+                  <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> 
+                </div>
             </div>
             <div class="background-default background3 col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p></p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <div class="background-info">
+                  <h2></h2> 
+                  <p></p>
+                  <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> 
+                </div>
             </div><!--/.col-xs-6.col-lg-4-->
             <div class="background-default background4 col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p></p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <div class="background-info">
+                  <h2></h2> 
+                  <p></p>
+                  <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> 
+                </div>
             </div><!--/.col-xs-6.col-lg-4-->
             <div class="background-default background5 col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p></p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <div class="background-info">
+                  <h2></h2> 
+                  <p></p>
+                  <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> 
+                </div>
             </div><!--/.col-xs-6.col-lg-4-->
             <div class="background-default background6 col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p></p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <div class="background-info">
+                  <h2></h2> 
+                  <p></p>
+                  <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> 
+                </div>
+            </div><!--/.col-xs-6.col-lg-4-->
+            <div class="background-default background7 col-xs-6 col-lg-4">
+                <div class="background-info">
+                  <h2></h2> 
+                  <p></p>
+                  <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> 
+                </div>
+            </div><!--/.col-xs-6.col-lg-4-->
+              <div class="background-default background8 col-xs-6 col-lg-4">
+                <div class="background-info">
+                  <h2></h2> 
+                  <p></p>
+                  <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> 
+                </div>
+            </div><!--/.col-xs-6.col-lg-4-->
+              <div class="background-default background9 col-xs-6 col-lg-4">
+                <div class="background-info">
+                  <h2></h2> 
+                  <p></p>
+                  <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> 
+                </div>
             </div><!--/.col-xs-6.col-lg-4-->
           </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->
@@ -139,15 +172,24 @@
             $('#customColorSubmit span button').on("click", function() {
                 var customColorValue = $("input").val();
                 console.log(customColorValue);
-                $("#backgroundsBox div").each(function(index){
-                    $(this).css("background-color", customColorValue)
+                $("#backgroundsBox > div").each(function(index){
+                    $(this).css("background-color", customColorValue);
                 });
             });
+            
+            $('#backgroundsBox > div').on('mouseover', function(){
+                $(this).children().css('display', 'inline');        
+            });
+        
+            $('#backgroundsBox > div').on('mouseleave', function(){
+                $(this).children().css('display', 'none');        
+            });
+        
         
             $("#colorBox li").on("click", function(){
                 var currentClass = $(this).attr('class').split(' ')[0];
                 console.log(currentClass);
-                $("#backgroundsBox div").each(function(index){
+                $("#backgroundsBox > div").each(function(index){
                     var classes = $(this).attr("class").split(' ');
                     var that = $(this);
                     $.each(classes, function(i, c) {
