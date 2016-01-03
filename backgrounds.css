@@ -53,7 +53,17 @@
     background-position:0 0, 30px 30px
 }
 
+.background10 {
+    background: linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0, linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0, linear-gradient(315deg, #ECEDDC 25%, transparent 25%), linear-gradient(45deg, #ECEDDC 25%, transparent 25%);	
+    background-size: 100px 100px;
+}
+
 .background-default {
+    background-color: #ccc;
+    color: #000;
+}
+
+.background-grey {
     background-color: #9896a4;
     color: #fff;
 }
